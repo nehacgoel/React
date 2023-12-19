@@ -8,35 +8,8 @@
 </head>
 <body>
     <div id="root">
-        <!-- <h1>Hello World!</h1> -->
+        <h1>Not rendered</h1>
     </div>
-
-    <!-- ------How we write in Javascript------ -->
-    <!-- <script>
-        const heading = document.createElement("h1");
-        heading.innerHTML = "Hello World from JS";
-        const root = document.getElementById("root");
-        root.append(heading);
-    </script> -->
-
-    <!-- -----Injecting react to a project. Get a CDN link where react is hosted.--------- -->
-
-        <!-- core file of react -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-
-        <!-- react library useful for DOM operations -->
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
-    <!-- First hello world program in react -->
-            <!-- <script>
-                const heading = React.createElement("h1", {}, "Hello World from React");
-
-                const root = ReactDOM.createRoot(document.getElementById("root"));
-
-                root.render(heading);
-
-            </script> -->
-
-            <script src="./App.js"></script>
+    <script type="module" src="./App.js"></script>
 </body>
 </html>

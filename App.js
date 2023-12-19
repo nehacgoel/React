@@ -1,40 +1,43 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// ----create a html element---------
+// JSX - HTML-like syntax or XML-like syntax 
+//(transpiled before it reaches JS engine) - PARCEL - Babel
 
-const heading = React.createElement(
-    "h1", 
-    {id: "heading", xyz: "abc"}, 
-    "Hello World from React"
+// JSX => React.createElement => object => HTMLElement(render on browser)
+
+//React Element
+const jsxHeading = ( <h1 id="heading" className="head" tabIndex="1"> 
+    Hello World
+    </h1>
+)
+
+
+//React Functional Component => It's a javascript function which return react element or we can say JSX code
+
+const HeadingComponent = () => {
+    return <h1 className="heading1">Hello React Functional Component</h1>;
+}
+
+//another way to write above code and most used
+const HeadingComponent2 = () => <h1 className="heading2">Hello World 2nd Component</h1>;
+
+//multiline code with ()
+
+//Component Composition => component inside another component
+const HeadingComponent3 = () => (
+    <div id="container">
+        <HeadingComponent/>
+        <HeadingComponent2/>
+        <h1 className="heading">Hello World 3rd Component</h1>
+    </div>
 );
-//heading is a object here.
-console.log(heading) // object
-
-//const root = ReactDOM.createRoot(document.getElementById("root"));
-
-//root.render(heading);
 
 
-
-//---- nested html structure -------
-
-const parent1 = React.createElement("div", {id: "parent"}, 
-                    React.createElement("div", {id: "child"},
-                        React.createElement("h1", {}, "Hi, I am a h1 tag..")));
-
-    // what if h1 and h2 are sibling. it will be an array
-
-const parent = React.createElement("div", {id: "parent"}, 
-        [
-            React.createElement("div", {id: "child1"},
-            [ React.createElement("h1", {}, "Hi, I am a h1 tag.."),
-            React.createElement("h2", {}, "Hi, I am a h2 tag..")]),
-
-            React.createElement("div", {id: "child2"},
-            [ React.createElement("h1", {}, "Hi, I am a h1 tag.."),
-            React.createElement("h2", {}, "Hi, I am a h2 tag..")])
-        ]
-    );
+console.log(jsxHeading)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+//root.render(jsxHeading);
+
+root.render(<HeadingComponent3/>);
